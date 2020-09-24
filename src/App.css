@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --black:#130f0d;
+    --primary:#fd951f;
+    --white:#f0f0f9;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--black);
+}
+header{
+    margin: 20px 0;
+    font-size: 25px;
+    color: var(--primary);
+    text-align: center;
+}
+main{
+    flex: 1;
+    text-align: center;
+    margin: 0 auto;
+    width: 320px;
+}
+.tab-links{
+    color: white;
+    margin-bottom: 32px;
+}
+.tab-content section {
+    animation: up_tab 1s ease-in   forwards;
+    color: white;
+    margin: 15px;
+}
+button{
+    border: none;
+    background: transparent;
+
+    padding: 16px;
+    font-size: 16px;
+    color: var(--white);
+    outline: none;
+
+    position: relative;
+}
+button::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    width: 00%;
+    background: var(--primary);
+    transition: .4s ease-in;
+}
+button:hover:after,
+    button.active:after{
+
+    
+    width: 100%;
+}
+
+@keyframes up_tab{
+    from{
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
